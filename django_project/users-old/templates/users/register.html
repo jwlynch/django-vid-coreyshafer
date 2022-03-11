@@ -1,0 +1,33 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% crispy form form.helper %}
+{% block content %}
+	form errors repr:
+		{{ form_errs_repr }}
+	form errors:
+	<ul>
+		{% for err_key in form_errs %}
+			<li>{{ err_key }}</li>
+		{% endfor %}
+	</ul>
+	<div class="content-section">
+		<form method="POST">
+			{% csrf_token %}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">Join Today</legend>
+				{{ form|crispy }} {# {{ form }} #}
+				{% if debug %}
+					<small><div>var debug: {{ debug }}</div></small>
+				{% endif %}
+			</fieldset>
+			<div class="form-group">
+				<button class="btn btn-outline-info" type="submit">Sign Up</button>
+			</div>
+		</form>
+		<div class="border-top pt-3">
+			<small class="text-muted">
+				Already have an account? <a class="ml-2" href="#">Sign In</a>
+			</small>
+		</div>
+	</div>
+{% endblock content %}
