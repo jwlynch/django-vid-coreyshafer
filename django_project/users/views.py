@@ -46,6 +46,10 @@ def testreg(request):
     # form.is_valid(). Change this to True or False to
     # choose whether to call it or not.
     call_isvalid = True
+
+    # validform will recieve the answer to form.is_valid(),
+    # only for the purpose of showing that answer. There
+    # is NO need to change this.
     validform = False
 
     if request.method != 'POST': # form method is anything but post
