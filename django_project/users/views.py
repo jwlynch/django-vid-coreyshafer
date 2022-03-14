@@ -39,6 +39,12 @@ def testreg(request):
         form_string = 'UserRegisterForm'
     else:
         form_string = 'UserCreationForm'
+
+    # if call_isvalid is true, the view will call and provide
+    # the function return value, of form.is_valid(), whereas
+    # if call_isvalid is false, the view will NEVER call
+    # form.is_valid(). Change this to True or False to
+    # choose whether to call it or not.
     call_isvalid = True
     validform = False
 
