@@ -53,9 +53,18 @@ def testreg(request):
     validform = False
 
     if request.method != 'POST': # form method is anything but post
-        form = UserRegisterForm()
+
+        if use_form_subclass:
+            form = UserRegisterForm()
+        else:
+            form = UserCreationForm()
+
     else: # form method is post
-        form = UserRegisterForm(request.POST)
+
+        if use_form_subclass:
+            form = UserRegisterForm(request.POST)
+        else:
+            form = UserCreationForm(request.POST)
 
         if call_isvalid:
             validform = form.is_valid()
