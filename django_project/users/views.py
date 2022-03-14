@@ -75,6 +75,7 @@ def testreg(request):
         'form': form,
         'validform_str': yesno[validform],
         'call_isvalid_str': yesno[call_isvalid],
+        'form_string': form_string,
     }
 
     return render(request, 'users/testreg.html', context )
