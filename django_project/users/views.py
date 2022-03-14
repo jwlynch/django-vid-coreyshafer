@@ -73,8 +73,8 @@ def testreg(request):
 
     context = {
         'form': form,
-        'call_isvalid': yesno[call_isvalid]
         'validform_str': yesno[validform],
+        'call_isvalid_str': yesno[call_isvalid],
     }
 
     return render(request, 'users/testreg.html', context )
