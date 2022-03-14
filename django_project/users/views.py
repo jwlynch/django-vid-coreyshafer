@@ -22,6 +22,17 @@ def register(request):
     return render(request, 'users/register.html', {'form': form} )
 
 def testreg(request):
+
+    # if use_form_subclass is True, the view will create and
+    # render the subclass of UserCreationForm, which is
+    # UserRegisterForm.
+    #
+    # if use_form_subclass is False, the view will create and
+    # use the -non-subclass, UserCreationForm
+    #
+    # choose which you'd like by setting it to True or False,
+    # below:
+    use_form_subclass = True
     call_isvalid = True
     validform = False
 
