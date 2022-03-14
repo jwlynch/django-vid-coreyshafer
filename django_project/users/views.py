@@ -33,6 +33,12 @@ def testreg(request):
     # choose which you'd like by setting it to True or False,
     # below:
     use_form_subclass = True
+
+    # this is for displaying from the template
+    if use_form_subclass:
+        form_string = 'UserRegisterForm'
+    else:
+        form_string = 'UserCreationForm'
     call_isvalid = True
     validform = False
 
