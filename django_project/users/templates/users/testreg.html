@@ -7,6 +7,7 @@
       {% if call_isvalid == 'yes' %}
         <li>was form valid? {{ validform_str }}</li>
       {% endif %}
+      <li>which class is being used as the form? {{ form_string }}</li>
   </ul>
   <form method="POST" action="{% url 'testreg' %}">
     {% csrf_token %}
