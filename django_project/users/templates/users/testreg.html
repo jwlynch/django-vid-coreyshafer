@@ -5,7 +5,7 @@
   <ul>
       <li>did call is_valid? {{ call_isvalid_str }}</li>
       {% if call_isvalid == 'yes' %}
-        <li>was form valid? {{ validform }}</li>
+        <li>was form valid? {{ validform_str }}</li>
       {% endif %}
   </ul>
   <form method="POST" action="{% url 'testreg' %}">
