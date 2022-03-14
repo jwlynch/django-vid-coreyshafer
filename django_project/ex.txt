@@ -1,0 +1,31 @@
+def color_size(request):
+    response = False
+    valid = False
+    color = black
+    size = small
+
+    if request.method == 'POST':
+        # make a form with the data from the post
+	form = MyForm(request.POST)
+
+        # see if it's valid
+	valid = form.is_valid()
+
+        if valid:
+	    response = HttpResponseRedirect( (go wherever here) )
+
+            # somehow set color and size (from the form maybe?
+
+	    valid = True
+
+        # wrap up what we're sending out
+	result = list(valid, form, color, size)
+
+    else: # anything but POST
+        # make a blank form
+	form = MyForm()
+
+        # wrap up what we're sending out
+	result = list(valid, form, color, size)
+
+    return result

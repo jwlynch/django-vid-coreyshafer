@@ -1,0 +1,10 @@
+hi, been looking for a point in the corey schafer video tutorial where I lose my form field error messages that come up as a result of submitting some bad values in a form, and I think I found at least one point:
+
+there is a place where he has us make a users/forms.py file, and put a form class that inherits from django.contrib.auth.forms.UserCreationForm, to add an email field to the existing username, password1 and password2 ("put same password again") fields, we call that class UserRegisterForm.
+
+when I use UserCreationForm (the one that comes with django.contrib), I get error messages. when I use UserRegisterForm (the one I defined in users/forms.py), no error messages.
+
+what happened? want to see forms.py? views?
+
+this is weird... when I use values that were present on the form before changing the view to use UserRegisterForm, I get errors... but if I do the GET request to the register page, which makes a blank form, I fill it out with all bad values (unmatching passwords, username having invalid username characters, invalid email addresses), I dont get errors at the fields, and the server doesn't show a log of the POST request for the form
+
